@@ -1,0 +1,88 @@
+body {
+    background-image: url('catBackground.webp');
+}
+
+form {
+    backdrop-filter: blur(15px);
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.144);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Moul", serif;
+    color: rgb(99, 139, 99);
+}
+
+h3{
+    font-family: "Bree Serif", serif;
+    color: rgb(60, 85, 60);
+    margin: 10px;
+}
+
+h4 {
+    font-family: "Slabo 27px", serif;
+    color: rgb(53, 65, 53);
+    /* margin: 20px; */
+    width: 50%;
+    
+}
+
+a {
+    text-decoration: none ;
+    font-family: "Bree Serif", serif;
+    color: rgb(57, 54, 54);
+}
+
+
+#timeAndScore {
+   display: flex;
+}
+
+input {
+    color: rgb(34, 83, 10);
+    background-color: rgb(155, 215, 168);
+    border: 2px dashed rgb(74, 119, 76);
+    font-family: "Bree Serif", serif;
+    outline: none;
+    transition: 0.3s;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+input::placeholder {
+    color: rgb(41, 59, 41);
+    font-family: "Bree Serif", serif;
+
+}
+
+input:focus {
+    border: 2px dashed rgb(30, 48, 31);
+}
+
+#submit {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form button:hover {
+    background-color: white !important;
+
+
+}
+
+button {
+    height: 40px;
+    background-color: rgb(210, 240, 209);
+    border: 1px solid #4e603f;
+    font-family: "Bree Serif", serif;
+    color: #42483d;
+}
+
