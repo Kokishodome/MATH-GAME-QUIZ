@@ -22,3 +22,24 @@ let secondNumber=Math.floor(Math.random()*1000)
 answer=firstNumber+secondNumber
 excersize.innerHTML=firstNumber+'+'+secondNumber
 }
+
+subtraction.onclick=function(){
+let firstNumber=Math.floor(Math.random()*1000)
+let secondNumber=Math.floor(Math.random()*1000)
+answer=firstNumber-secondNumber
+excersize.innerHTML=firstNumber+'-'+secondNumber
+}
+
+multiplication.onclick=function(){
+let firstNumber=Math.floor(Math.random()*12)
+let secondNumber=Math.floor(Math.random()*12)
+answer=firstNumber*secondNumber
+excersize.innerHTML=firstNumber+' x '+secondNumber
+}
+
+division.onclick=function(){
+let firstNumber=Math.floor(Math.random()*12)
+let secondNumber=Math.floor(Math.random()*12)
+answer=firstNumber-secondNumber
+excersize.innerHTML=firstNumber+' / '+secondNumber
+}
