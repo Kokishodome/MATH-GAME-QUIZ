@@ -9,57 +9,93 @@ let excersize = document.getElementById('excersize')
 let answer
 let seconds = 60
 let time = document.getElementById('time')
+let record = 0
+let recordTitle = document.getElementById('recordTitle')
+let sign = '+'
 
 
 submit.onclick = function (event) {
+    // blocks the site from refreshing
     event.preventDefault()
     if (input.value == answer) {
+        input.value = ''
         getExcersize()
         score = score + 1
         scoreTitle.innerHTML = ('Score: ') + score
+        if (score > record) {
+            record = record + 1
+            recordTitle.innerHTML = ('Record: ') + record
+        }
     }
 }
 
+// allows for the code to be shorter (makes the code for the all the places that we call this function)
 function getExcersize() {
-    let firstNumber = Math.floor(Math.random() * 1000)
-    let secondNumber = Math.floor(Math.random() * 1000)
-    answer = firstNumber + secondNumber
-    excersize.innerHTML = ('Excersize: ') + firstNumber + '+' + secondNumber
+
+    let firstNumber = Math.floor(Math.random() * 100)
+    let secondNumber = Math.floor(Math.random() * 100)
+    if (sign == '+') {
+        answer = firstNumber + secondNumber
+    }
+    if (sign == '-') {
+        answer = firstNumber - secondNumber
+    }
+    if (sign == '*') {
+        firstNumber = Math.floor(Math.random() * 13)
+        secondNumber = Math.floor(Math.random() * 13)
+        answer = firstNumber * secondNumber
+
+    }
+    if(sign == '/'){
+        answer = Math.floor(Math.random()* 13)
+        secondNumber = Math.floor(Math.random()* 13)
+        firstNumber = answer * secondNumber
+
+    }
+    //   to show the excersize on the website
+    excersize.innerHTML = ('Excersize: ') + firstNumber + sign + secondNumber
 }
 
-
-addition.onclick = function () {
+function startGame() {
+    // stops the timer
     clearInterval(timeInterval)
     getExcersize()
+    submit.disabled = false
+    score = 0
+    scoreTitle.innerHTML = ('Score: 0')
     seconds = 60
+    // to set a countdown
     timeInterval = setInterval(() => {
         seconds = seconds - 1
         if (seconds == 0) {
             clearInterval(timeInterval)
+            submit.disabled = true
         }
         time.innerHTML = ('Time: ') + seconds
         console.log(seconds);
     }, 1000);
+
+}
+
+
+addition.onclick = function () {
+    sign = '+'
+    startGame()
 }
 
 
 subtraction.onclick = function () {
-    let firstNumber = Math.floor(Math.random() * 1000)
-    let secondNumber = Math.floor(Math.random() * 1000)
-    answer = firstNumber - secondNumber
-    excersize.innerHTML = firstNumber + '-' + secondNumber
+    sign = '-'
+    startGame()
+
 }
 
 multiplication.onclick = function () {
-    let firstNumber = Math.floor(Math.random() * 12)
-    let secondNumber = Math.floor(Math.random() * 12)
-    answer = firstNumber * secondNumber
-    excersize.innerHTML = firstNumber + ' x ' + secondNumber
+    sign = '*'
+    startGame()
 }
 
 division.onclick = function () {
-    let firstNumber = Math.floor(Math.random() * 12)
-    let secondNumber = Math.floor(Math.random() * 12)
-    answer = firstNumber - secondNumber
-    excersize.innerHTML = firstNumber + ' / ' + secondNumber
+   sign = '/'
+   startGame()
 }
