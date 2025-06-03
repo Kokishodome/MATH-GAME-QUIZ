@@ -48,7 +48,7 @@ function getExcersize() {
     }
     if(sign == '/'){
         answer = Math.floor(Math.random()* 13)
-        secondNumber = Math.floor(Math.random()* 13)
+        secondNumber = Math.floor(Math.random()* 13+1)
         firstNumber = answer * secondNumber
 
     }
