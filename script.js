@@ -32,8 +32,8 @@ submit.onclick = function (event) {
 // allows for the code to be shorter (makes the code for the all the places that we call this function)
 function getExcersize() {
 
-    let firstNumber = Math.floor(Math.random() * 100)
-    let secondNumber = Math.floor(Math.random() * 100)
+    let firstNumber = Math.floor(Math.random() * 101)
+    let secondNumber = Math.floor(Math.random() * 101)
     if (sign == '+') {
         answer = firstNumber + secondNumber
     }
@@ -42,7 +42,7 @@ function getExcersize() {
     }
     if (sign == '*') {
         firstNumber = Math.floor(Math.random() * 13)
-        secondNumber = Math.floor(Math.random() * 13)
+        secondNumber = Math.floor(Math.random() *13)
         answer = firstNumber * secondNumber
 
     }
